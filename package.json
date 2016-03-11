@@ -1,0 +1,24 @@
+{
+  "name": "videojs-hls-play",
+  "version": "1.0.0",
+  "description": "Play video streaming with videojs and Amazon CloudFront",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nguyenthanhtung88/videojs-hls-play.git"
+  },
+  "keywords": [
+    "videojs",
+    "hls",
+    "s3"
+  ],
+  "author": "Tungshooter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nguyenthanhtung88/videojs-hls-play/issues"
+  },
+  "homepage": "https://github.com/nguyenthanhtung88/videojs-hls-play"
+}

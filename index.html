@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HLS Playing with Video.js</title>
+    <link href="node_modules/video.js/dist/video-js.min.css" rel="stylesheet">
+</head>
+<body>
+    <video id="my-video" class="video-js vjs-default-skin">
+        <source src="http://d2ap4924gmj25h.cloudfront.net/slimo-media-STC01.m3u8" type="application/x-mpegURL">
+    </video>
+
+    <script src="node_modules/video.js/dist/video.min.js"></script>
+    <script src="node_modules/videojs-contrib-hls/dist/videojs.hls.min.js"></script>
+    <script src="node_modules/videojs-resolution-switcher/lib/videojs-resolution-switcher.js"></script>
+    <script type="text/javascript">
+        videojs('my-video', {
+            controls: true,
+            plugins: {
+                videoJsResolutionSwitcher: {
+                    default: 'high',
+                    dynamicLabel: true
+                }
+            }
+        }, function() {
+            var player = this,
+                hls = player.tech({ IWillNotUseThisInPlugins: true }).hls;
+            console.log(hls);
+            player.on('resolutionchange', function() {
+                console.info('Source changed to %s', player.src())
+            });
+        });
+    </script>
+</body>
+</html>
